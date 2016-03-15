@@ -5,6 +5,9 @@ var exec = require('cordova/exec');
 var sms = {};
 
 function convertPhoneToArray(phone) {
+    if (typeof phone === 'undefined' || phone == null) {
+        phone = "";
+    }
     if (typeof phone === 'string' && phone.indexOf(',') !== -1) {
         phone = phone.split(',');
     }
